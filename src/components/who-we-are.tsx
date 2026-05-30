@@ -39,8 +39,8 @@ export function WhoWeAre() {
   const [activeId, setActiveId] = useState<string | null>(null)
 
   return (
-    <section className="relative w-full min-h-[1000px] flex flex-col lg:flex-row">
-      <div className="w-full lg:w-[40%] bg-[#F7F7F7] text-[#121317] z-10 relative flex flex-col justify-center px-margin-mobile lg:px-margin-desktop py-20 lg:py-32 h-auto lg:min-h-[1000px] lg:[mask-image:linear-gradient(to_right,black_0%,black_80%,transparent_100%)]">
+    <section className="relative w-full flex flex-col lg:flex-row">
+      <div className="w-full lg:w-[40%] bg-[#F7F7F7] text-[#121317] z-10 relative flex flex-col justify-center px-margin-mobile lg:px-margin-desktop py-16 lg:py-32 h-auto lg:min-h-[800px] lg:[mask-image:linear-gradient(to_right,black_0%,black_80%,transparent_100%)]">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export function WhoWeAre() {
         </motion.div>
       </div>
 
-      <div className="w-full h-[600px] lg:min-h-[1000px] lg:absolute lg:top-0 lg:left-0 lg:w-full z-0 relative overflow-hidden bg-surface">
+      <div className="w-full h-[400px] lg:h-auto lg:min-h-[800px] lg:absolute lg:top-0 lg:left-0 lg:w-full lg:z-0 relative overflow-hidden bg-surface">
         <Image
           src="/whoweareback.png"
           alt=""
@@ -89,11 +89,11 @@ export function WhoWeAre() {
           className="object-cover object-center"
         />
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to right, #F7F7F7 0%, #F7F7F7 15%, rgba(247,247,247,0.4) 22%, transparent 32%, rgba(18,19,23,0.15) 42%, rgba(18,19,23,0.35) 55%, rgba(18,19,23,0.55) 70%, rgba(18,19,23,0.75) 85%, #121317 100%)",
+          background: "linear-gradient(to right, #F7F7F7 0%, rgba(247,247,247,0.9) 10%, rgba(247,247,247,0.4) 20%, transparent 35%, rgba(18,19,23,0.15) 45%, rgba(18,19,23,0.35) 55%, rgba(18,19,23,0.55) 70%, rgba(18,19,23,0.75) 85%, #121317 100%)",
         }} />
 
         <motion.div
-          className="absolute inset-0 flex flex-col justify-center px-8 lg:pl-[42%] lg:pr-20 z-10 gap-16 lg:gap-24"
+          className="absolute inset-0 flex flex-col justify-center px-margin-mobile lg:pl-[42%] lg:pr-20 z-10 gap-10 lg:gap-24"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

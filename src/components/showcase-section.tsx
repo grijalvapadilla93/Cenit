@@ -90,7 +90,7 @@ export function ShowcaseSection() {
             >
               <div className={`relative ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="block group">
-                  <div className="relative h-[320px] md:h-[400px] rounded-2xl overflow-hidden bg-surface-container border border-white/5 group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+                  <div className="relative h-[220px] md:h-[400px] rounded-2xl overflow-hidden bg-surface-container border border-white/5 group-hover:border-primary/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(255,255,255,0.05)]">
                     <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 bg-surface/80 backdrop-blur-md border border-white/10 rounded-full px-3 py-1">
                       <span className="material-symbols-outlined text-[12px] text-primary">{project.tagIcon}</span>
                       <span className="font-label-sm text-[10px] text-primary uppercase tracking-wider">{project.tag}</span>

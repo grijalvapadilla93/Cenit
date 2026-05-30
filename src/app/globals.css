@@ -97,7 +97,7 @@ body {
 }
 
 .editorial-headline {
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3rem, 10vw, 8rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
 }
@@ -126,4 +126,13 @@ body {
 
 .service-card:hover .arrow-icon {
   transform: translateX(4px);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }

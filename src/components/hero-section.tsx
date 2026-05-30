@@ -39,7 +39,7 @@ export function HeroSection() {
   const contentOpacity = useTransform(scrollY, [0, 800], [1, 0])
 
   return (
-    <div className="relative h-screen">
+    <div className="relative min-h-screen md:h-screen">
       <motion.div className="absolute inset-0 overflow-hidden -z-10" style={{ scale }}>
         <Image
           src="/hero-bg.jpg"
@@ -52,7 +52,7 @@ export function HeroSection() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(18, 19, 23, 0.8) 0%, rgba(18, 19, 23, 0) 50%)" }} />
       </motion.div>
 
-      <main className="relative z-10 w-full h-screen px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col pt-[80px]">
+      <main className="relative z-10 w-full min-h-screen md:h-screen px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col pt-[80px]">
         <div className="flex-1 flex flex-col justify-center">
           <motion.div
             className="w-full md:w-2/3 lg:w-1/2 flex flex-col items-start"
@@ -61,9 +61,9 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-2 mb-8 backdrop-blur-sm bg-white/5">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-2 mb-6 md:mb-8 backdrop-blur-sm bg-white/5">
               <span className="material-symbols-outlined text-[14px]">auto_awesome</span>
-              <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary whitespace-nowrap">Digital Systems That Drive Growth</span>
+              <span className="font-label-sm text-[10px] md:text-label-sm uppercase tracking-widest text-primary">Digital Systems That Drive Growth</span>
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="font-display-lg editorial-headline text-primary mb-6 font-medium">
@@ -94,12 +94,12 @@ export function HeroSection() {
         </div>
 
         <motion.div style={{ opacity: contentOpacity }}>
-          <div className="flex flex-wrap md:flex-nowrap items-center justify-between gap-6 border-t border-white/10 pt-8 pb-8">
+          <div className="flex md:flex-wrap items-center justify-between gap-6 md:gap-8 border-t border-white/10 pt-6 md:pt-8 pb-6 md:pb-8 overflow-x-auto md:overflow-visible scrollbar-none">
             {trustItems.map((item) => (
-              <div key={item.label} className="flex items-center gap-3">
+              <div key={item.label} className="flex items-center gap-3 flex-shrink-0 md:flex-shrink">
                 <span className="material-symbols-outlined text-primary/90 text-xl">{item.icon}</span>
                 <div>
-                  <div className="font-label-sm text-label-sm text-primary">{item.label}</div>
+                  <div className="font-label-sm text-[11px] md:text-label-sm text-primary whitespace-nowrap">{item.label}</div>
                   <div className="font-label-sm text-[10px] text-on-surface-variant/70 tracking-normal">{item.sub}</div>
                 </div>
               </div>

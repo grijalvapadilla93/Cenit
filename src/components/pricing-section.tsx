@@ -64,7 +64,7 @@ export function PricingSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 * index }}
-              className={`flex flex-col h-full transition-all duration-500 p-10 relative rounded-[40px] backdrop-blur-xl ${
+              className={`flex flex-col h-full transition-all duration-500 p-6 md:p-10 relative rounded-[24px] md:rounded-[40px] backdrop-blur-xl ${
                 tier.highlighted
                   ? "bg-surface/80 border border-white/15 shadow-[0_0_40px_rgba(0,0,0,0.3)] md:scale-105 z-10 hover:scale-[1.07] hover:shadow-[0_0_60px_rgba(255,255,255,0.1)]"
                   : "bg-surface/70 border border-white/8 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"

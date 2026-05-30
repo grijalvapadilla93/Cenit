@@ -27,7 +27,7 @@ export function ContactSection() {
             <span className="font-label-sm text-[12px] text-primary uppercase tracking-widest border border-primary/30 px-3 py-1 rounded-full inline-block mb-6">
               Let&apos;s Talk
             </span>
-            <h2 className="font-display-lg text-[52px] md:text-[72px] text-primary leading-[1.1] font-medium mb-6">
+            <h2 className="font-display-lg text-[40px] md:text-[72px] text-primary leading-[1.1] font-medium mb-6">
               Start a<br />
               <span className="italic font-light text-primary/90">Conversation</span>
             </h2>
