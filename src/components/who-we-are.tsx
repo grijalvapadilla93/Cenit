@@ -81,12 +81,14 @@ export function WhoWeAre() {
         </motion.div>
       </div>
 
-      <div className="w-full lg:min-h-[800px] lg:absolute lg:top-0 lg:left-0 lg:w-full lg:z-0 relative overflow-hidden bg-surface py-12 lg:py-0">
+      <div className="w-full lg:h-full lg:absolute lg:top-0 lg:left-0 lg:w-full lg:z-0 relative overflow-hidden bg-surface py-12 lg:py-0">
         <Image
-          src="/whoweareback.png"
+          src="/WhoWeareback360norotation.png"
           alt=""
           fill
           className="object-cover object-center"
+          quality={90}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-surface/30 to-surface/10 lg:hidden" />
         <div className="hidden lg:block absolute inset-0" style={{

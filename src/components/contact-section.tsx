@@ -1,19 +1,27 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 
 export function ContactSection() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
+
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative w-full overflow-hidden">
+      <motion.div className="absolute inset-0 z-0" style={{ scale: bgScale }}>
         <Image
-          src="/contactformbg.png"
+          src="/ContactForm360.png"
           alt=""
           fill
           className="object-cover object-center"
         />
-      </div>
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-surface/50 via-surface/40 to-surface/70 z-[1]" />
 
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32">

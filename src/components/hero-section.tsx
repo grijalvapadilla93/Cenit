@@ -46,6 +46,8 @@ export function HeroSection() {
           alt=""
           fill
           className="object-cover object-center md:[object-position:65%_65%]"
+          quality={90}
+          sizes="100vw"
           priority
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(18, 19, 23, 0.85) 0%, rgba(18, 19, 23, 0.6) 40%, rgba(18, 19, 23, 0) 70%)" }} />
@@ -65,13 +67,13 @@ export function HeroSection() {
               <span className="font-label-sm text-[10px] md:text-label-sm uppercase tracking-widest text-primary">Digital Systems That Drive Growth</span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="font-display-lg editorial-headline text-primary mb-6 font-medium">
+            <motion.h1 variants={itemVariants} className="font-display-lg editorial-headline text-primary mb-6 font-medium [text-shadow:_0_4px_30px_rgb(0_0_0_/_50%)]">
               Websites.<br />
               Automation.<br />
-              <span className="italic font-light opacity-90">Growth.</span>
+              <span className="italic font-light text-primary">Growth.</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md leading-relaxed">
+            <motion.p variants={itemVariants} className="font-body-lg text-body-lg text-on-surface mb-12 max-w-md leading-relaxed [text-shadow:_0_2px_20px_rgb(0_0_0_/_50%)]">
               We build premium websites, AI-powered systems, and growth strategies that help businesses attract more customers and scale with confidence.
             </motion.p>
 

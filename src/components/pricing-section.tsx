@@ -1,6 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 
 const tiers = [
@@ -31,16 +32,25 @@ const tiers = [
 ]
 
 export function PricingSection() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
+
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative w-full overflow-hidden">
+      <motion.div className="absolute inset-0 z-0" style={{ scale: bgScale }}>
         <Image
-          src="/pricingsectionbg.png"
+          src="/PricingSection360.png"
           alt=""
           fill
           className="object-cover object-center"
+          quality={90}
+          sizes="100vw"
         />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32">
         <motion.header

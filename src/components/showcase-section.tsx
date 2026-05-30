@@ -1,6 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 
 const projects = [
@@ -35,16 +36,26 @@ const projects = [
 ]
 
 export function ShowcaseSection() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
+
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative w-full overflow-hidden bg-surface">
+      <motion.div className="absolute inset-0 z-0 max-h-screen overflow-hidden" style={{ scale: bgScale }}>
         <Image
-          src="/showcasesectionbg.png"
+          src="/Showcasesection360.png"
           alt=""
           fill
-          className="object-cover object-center lg:object-right"
+          className="object-cover object-center"
+          quality={90}
+          sizes="100vw"
         />
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface" />
+      </motion.div>
 
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12 md:mb-16">
@@ -148,7 +159,7 @@ export function ShowcaseSection() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <span className="text-sm text-on-surface-variant">See how we can help your business grow.</span>
-            <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 bg-transparent text-primary font-label-sm uppercase tracking-wider rounded-full hover:bg-white/5 hover:border-white/30 transition-all duration-300 active:scale-[0.97]">
+            <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-surface font-label-sm text-[12px] uppercase tracking-widest rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
               <span>Book a Strategy Call</span>
               <span className="material-symbols-outlined text-[16px] ml-2">north_east</span>
             </a>
