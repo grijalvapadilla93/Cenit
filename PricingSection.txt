@@ -1,0 +1,358 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cenit Digital - Pricing Ecosystem</title>
+<!-- Google Fonts: EB Garamond & Geist -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#4a4949",
+                        "on-tertiary": "#303032",
+                        "on-tertiary-fixed-variant": "#474649",
+                        "on-background": "#e3e2e7",
+                        "surface-container": "#1e1f23",
+                        "on-primary-fixed-variant": "#454747",
+                        "outline": "#8e9192",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-low": "#1a1b1f",
+                        "secondary": "#c9c6c5",
+                        "on-tertiary-container": "#656466",
+                        "tertiary-fixed-dim": "#c8c6c8",
+                        "tertiary-fixed": "#e4e2e4",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#636565",
+                        "on-secondary-container": "#bab8b7",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#121317",
+                        "primary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474646",
+                        "background": "#121317",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c7c8",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-bright": "#38393d",
+                        "on-error": "#690005",
+                        "primary-container": "#e2e2e2",
+                        "surface-variant": "#343539",
+                        "on-primary-fixed": "#1a1c1c",
+                        "inverse-surface": "#e3e2e7",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "tertiary-container": "#e4e2e4",
+                        "error-container": "#93000a",
+                        "on-surface": "#e3e2e7",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "tertiary": "#ffffff",
+                        "surface-tint": "#c6c6c7",
+                        "on-tertiary-fixed": "#1b1b1d",
+                        "surface-container-high": "#292a2e",
+                        "surface-container-lowest": "#0d0e12",
+                        "on-primary": "#2f3131",
+                        "surface-dim": "#121317",
+                        "primary": "#ffffff",
+                        "on-secondary": "#313030",
+                        "surface-container-highest": "#343539",
+                        "inverse-on-surface": "#2f3034"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "24px",
+                        "margin-tablet": "40px",
+                        "gutter": "32px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>/* Custom cursor logic */
+        body {
+            cursor: none;
+        }
+        #custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, mix-blend-mode 0.2s;
+            mix-blend-mode: difference;
+        }
+        #custom-cursor.hover {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid white;
+            mix-blend-mode: normal;
+        }
+        
+        /* Glassmorphism utils - Updated to remove blur */
+        .glass-panel {
+            background: rgba(18, 19, 23, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-panel-highlight {
+            background: rgba(18, 19, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 40px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.02);
+        }
+        
+        /* Button Glow */
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }</style>
+<style>/* Custom cursor logic */
+        body {
+            cursor: none;
+        }
+        #custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, mix-blend-mode 0.2s;
+            mix-blend-mode: difference;
+        }
+        #custom-cursor.hover {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid white;
+            mix-blend-mode: normal;
+        }
+        
+        /* Glassmorphism utils - Updated to remove blur */
+        .glass-panel {
+            background: rgba(18, 19, 23, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-panel-highlight {
+            background: rgba(18, 19, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 40px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.02);
+        }
+        
+        /* Button Glow */
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }</style></head>
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden antialiased selection:bg-white/20 selection:text-white">
+<!-- Custom Cursor -->
+<div class="hidden md:block" id="custom-cursor" style="left: 321px; top: 1067px;"></div>
+<!-- Background Image -->
+<div class="fixed inset-0 z-0">
+<img alt="sunset volcanic landscape workspace" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-YuKpqPlkbCApQV25NJ0dlECf_Q02QFUdtLxhBeMrIhjivL0cD5yAFw0XUyNZWMGPwfopuKpkS0ClrpgHAWwUv1GxPLXFmlhVCP9GQVRTg4YhC0nmjwpvHxPLDmVLx_99KlB-4qH5mWxuwtE8UleNWinBvyfHowJr-oOZ5lhEd6gpLNY4Q6aAVavnk7ygM8wmX2XiFaqAhmha6mFWf2orrCJBk9z-5_Z5qDB1lYheGkuOlAYKIJFQZp4bQJrrpUAIQQxCO67dpvZR">
+<!-- Radial Gradient Overlay for focus and readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#121317_100%)] opacity-80"></div>
+</div>
+<!-- Main Content -->
+<main class="relative z-10 w-full min-h-screen flex flex-col justify-center py-20 px-margin-mobile md:px-margin-desktop">
+<!-- Header -->
+<header class="text-center mb-16 md:mb-24">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-primary mb-6">
+                Systems for Scale
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Invest in digital infrastructure designed for high-end creative studios. Predictable growth, transparent pricing, uncompromised quality.
+            </p>
+</header>
+<!-- Pricing Grid -->
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+<!-- Tier 1: Digital Presence -->
+<article class="glass-panel p-10 flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 interactive rounded-[40px]">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase border border-outline/30 px-3 py-1 rounded-full mb-6 inline-block">Foundation</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Digital Presence</h2>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="font-body-lg text-body-lg text-on-surface-variant">$</span>
+<span class="font-display-lg text-headline-lg md:text-display-lg text-primary">1,500</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/mo</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Establish high-conversion brand authority and essential digital infrastructure.</p>
+</div>
+<div class="flex-grow">
+<ul class="space-y-4 font-body-md text-body-md text-on-background mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">High-conversion Webflow site</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Monthly performance audits</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Basic SEO &amp; Analytics</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Quarterly strategy sessions</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 px-6 border border-white/20 text-primary font-label-sm text-label-sm uppercase tracking-widest rounded transition-all duration-300 hover:bg-white/10 interactive">
+                    Start Project
+                </button>
+</article>
+<!-- Tier 2: Digital Growth (Highlighted) -->
+<article class="glass-panel-highlight p-10 flex flex-col h-full transform md:scale-105 relative z-10 interactive rounded-[40px]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-background font-label-sm text-label-sm px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap">
+                    Most Popular
+                </div>
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase border border-primary/30 px-3 py-1 rounded-full mb-6 inline-block">Momentum</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Digital Growth</h2>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="font-body-lg text-body-lg text-on-surface-variant">$</span>
+<span class="font-display-lg text-headline-lg md:text-display-lg text-primary">2,900</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/mo</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/80">Automate lead generation and amplify your digital reach with active campaigns.</p>
+</div>
+<div class="flex-grow">
+<ul class="space-y-4 font-body-md text-body-md text-on-background mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Everything in Presence, plus:</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/70 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Automated CRM integration</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/70 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Custom lead generation funnels</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/70 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Advanced technical SEO</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary/70 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Monthly strategy &amp; reporting</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 px-6 bg-primary text-background font-label-sm text-label-sm uppercase tracking-widest rounded transition-all duration-300 btn-glow interactive">
+                    Start Project
+                </button>
+</article>
+<!-- Tier 3: Digital Authority -->
+<article class="glass-panel p-10 flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 interactive rounded-[40px]">
+<div class="mb-8">
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase border border-outline/30 px-3 py-1 rounded-full mb-6 inline-block">Ecosystem</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Digital Authority</h2>
+<div class="flex items-baseline gap-2 mb-4">
+<span class="font-body-lg text-body-lg text-on-surface-variant">$</span>
+<span class="font-display-lg text-headline-lg md:text-display-lg text-primary">5,900</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/mo</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/80">A complete, AI-powered operational ecosystem and bespoke software solutions.</p>
+</div>
+<div class="flex-grow">
+<ul class="space-y-4 font-body-md text-body-md text-on-background mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Everything in Growth, plus:</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Custom web app development</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">AI-driven operational workflows</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Dedicated engineering squad</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline/50 mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<span class="">Priority 24/7 support SLA</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 px-6 border border-white/20 text-primary font-label-sm text-label-sm uppercase tracking-widest rounded transition-all duration-300 hover:bg-white/10 interactive">
+                    Start Project
+                </button>
+</article>
+</div>
+</main>
+<!-- Custom Cursor Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('custom-cursor');
+            const interactives = document.querySelectorAll('.interactive, button, a');
+
+            if (window.matchMedia("(pointer: fine)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+
+                interactives.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.classList.add('hover');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('hover');
+                    });
+                });
+            }
+        });
+    </script>
+
+
+</body></html>

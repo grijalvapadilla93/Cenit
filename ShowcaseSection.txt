@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cenit Digital - Portfolio Showcase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#c4c7c8",
+                    "on-tertiary": "#303032",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#e2e2e2",
+                    "secondary": "#c9c6c5",
+                    "outline-variant": "#444748",
+                    "surface-container-high": "#292a2e",
+                    "surface": "#121317",
+                    "on-secondary-fixed-variant": "#474646",
+                    "on-tertiary-container": "#656466",
+                    "surface-container": "#1e1f23",
+                    "tertiary-fixed": "#e4e2e4",
+                    "surface-container-low": "#1a1b1f",
+                    "on-tertiary-fixed-variant": "#474649",
+                    "on-tertiary-fixed": "#1b1b1d",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-container-lowest": "#0d0e12",
+                    "on-background": "#e3e2e7",
+                    "inverse-on-surface": "#2f3034",
+                    "error-container": "#93000a",
+                    "outline": "#8e9192",
+                    "on-secondary-container": "#bab8b7",
+                    "tertiary-fixed-dim": "#c8c6c8",
+                    "secondary-container": "#4a4949",
+                    "primary": "#ffffff",
+                    "secondary-fixed-dim": "#c9c6c5",
+                    "surface-bright": "#38393d",
+                    "on-surface": "#e3e2e7",
+                    "error": "#ffb4ab",
+                    "tertiary-container": "#e4e2e4",
+                    "on-primary-container": "#636565",
+                    "surface-variant": "#343539",
+                    "inverse-primary": "#5d5f5f",
+                    "surface-tint": "#c6c6c7",
+                    "surface-dim": "#121317",
+                    "on-primary-fixed-variant": "#454747",
+                    "surface-container-highest": "#343539",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "primary-container": "#e2e2e2",
+                    "tertiary": "#ffffff",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "background": "#121317",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e3e2e7",
+                    "on-secondary": "#313030",
+                    "on-primary": "#2f3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-tablet": "40px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "container-max": "1440px",
+                    "margin-mobile": "24px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["EB Garamond", "serif"],
+                    "body-lg": ["Geist", "sans-serif"],
+                    "label-sm": ["Geist", "sans-serif"],
+                    "headline-lg-mobile": ["EB Garamond", "serif"],
+                    "display-lg": ["EB Garamond", "serif"],
+                    "body-md": ["Geist", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #000000, #404040);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgNecRzPzBuMgbJ4ny_VhIxz5RG1NLeRdPO4oohKhiRSYLb3xN-T2fTPMy_NevZejdmnptYeVzREO6OgP1lhniEaeDolf7xiz4C2ThqzCdqTkN4IqwTwouDbpLXGkY_uCLjNe6aHNabIGNAzZUizXTIBSWQAVISLgj2lWX8lCk8Jqv5YjwuoaoLpx4iAR6KA6SY4H9aJsqrEkBmLZ7cwERtpWWGIVc143Ahboi91u2cgT5sGsRM2LTYoAEo5F4bPF2geq21uk3fNMw');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%),
+                        linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-body-md antialiased min-h-screen flex flex-col selection:bg-black/20 selection:text-black">
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[90vh] flex items-center pt-20 pb-32 overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0 hero-bg"></div>
+<div class="absolute inset-0 z-0 hero-overlay"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Text Content (40%) -->
+<div class="md:col-span-5 flex flex-col justify-center items-start pt-12 md:pt-0">
+<div class="inline-flex items-center space-x-2 bg-black/5 border border-black/10 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px] text-black">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-black uppercase tracking-widest">Selected Work</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-black mb-6 leading-[1.1] tracking-tight">
+                        Digital Systems.<br/>
+<span class="font-headline-lg italic font-light text-black/90">That Drive Growth.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-black max-w-md leading-relaxed mb-10">
+                        A selection of websites and automation systems we've designed and built to help businesses grow, scale, and lead their industries.
+                    </p>
+</div>
+<!-- Spacer for layout (60% visual area on right) -->
+<div class="md:col-span-7 hidden md:block"></div>
+</div>
+</section>
+<!-- Showcase Grid Section -->
+<section class="relative z-20 -mt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel rounded-[40px] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden p-4">
+<div class="absolute top-6 left-6 z-10 inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md border border-black/10 rounded-full px-3 py-1">
+<span class="material-symbols-outlined text-[12px] text-black">language</span>
+<span class="font-label-sm text-[10px] text-black uppercase tracking-wider">Website</span>
+</div>
+<img alt="Adapt Performance Website" class="w-full h-full object-cover rounded-lg scale-100 group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A premium fitness and athletic website mockup displayed on a sleek laptop screen. The website features high-contrast black and white photography of an athlete, bold modern typography, and a minimalist interface. The laptop sits on a dark, textured surface with soft, dramatic studio lighting highlighting the screen, creating a luxurious and performance-driven mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzn0r97_TuZJtavwRO2qZvO1BwMit6EQqg0t_PsAQ7sEhmaRijDeaENAjrxx9VuEgNtBHb1sZ_X9aGBREIDSOvZaYu5Qi7Ez-THtLh5NDd7h0YNyP5kxrDxbNTfq2OSVK4Y-R9rlmuv793pVDHHE5x6hd4advP0uuxVDzlGOcWoS5nwsxcKOfwQs-LIYdQgzA-kFz29X5Pl0a-6tTfVCttMNBTZIGwBrHkAPecDaebkHTHs7hRM7f2XD1_DH_mDsRmjzvTkSHHtMGX"/>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white/50">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body-lg text-[22px] text-black font-medium tracking-tight">ADAPT PERFORMANCE</h3>
+</div>
+<p class="font-body-md text-black text-sm mb-6 leading-relaxed flex-grow">
+                            A high-conversion platform for a premium fitness brand, integrating seamless booking and membership management.
+                        </p>
+<div class="flex space-x-4 mb-6 pt-4 border-t border-black/10">
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Lead Gen</span>
+<span class="font-body-md text-black">+137%</span>
+</div>
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Inquiries</span>
+<span class="font-body-md text-black">2.4x</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-sm text-[11px] text-black/60 uppercase tracking-wider">Fitness</span>
+<a class="inline-flex items-center space-x-2 text-black font-label-sm text-[12px] uppercase tracking-wider group/link hover:text-black/70 transition-colors" href="#">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-[40px] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden p-4 bg-gray-100">
+<div class="absolute top-6 left-6 z-10 inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md border border-black/10 rounded-full px-3 py-1">
+<span class="material-symbols-outlined text-[12px] text-black">bolt</span>
+<span class="font-label-sm text-[10px] text-black uppercase tracking-wider">Automation</span>
+</div>
+<!-- Abstract Automation Visualization -->
+<div class="w-full h-full flex flex-col items-center justify-center space-y-4 pt-8">
+<div class="flex items-center space-x-4 bg-white border border-black/5 p-3 rounded-lg w-3/4 transform transition-transform group-hover:scale-105 duration-500 delay-75 shadow-sm">
+<div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-blue-600 text-sm">person_add</span></div>
+<div><div class="text-xs text-black font-medium">Lead Captured</div><div class="text-[10px] text-black/60">Via Web Form</div></div>
+</div>
+<div class="w-px h-4 bg-black/10"></div>
+<div class="flex space-x-4 w-3/4 justify-center">
+<div class="flex items-center space-x-3 bg-white border border-black/5 p-3 rounded-lg w-1/2 transform transition-transform group-hover:-translate-y-1 duration-500 delay-150 shadow-sm">
+<div class="w-6 h-6 rounded bg-emerald-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-emerald-600 text-[12px]">analytics</span></div>
+<div><div class="text-[10px] text-black">Score Lead</div></div>
+</div>
+<div class="flex items-center space-x-3 bg-white border border-black/5 p-3 rounded-lg w-1/2 transform transition-transform group-hover:-translate-y-1 duration-500 delay-200 shadow-sm">
+<div class="w-6 h-6 rounded bg-amber-500/10 flex items-center justify-center"><span class="material-symbols-outlined text-amber-600 text-[12px]">database</span></div>
+<div><div class="text-[10px] text-black">CRM Update</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white/50">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body-lg text-[22px] text-black font-medium tracking-tight">CENIT AUTOMATION</h3>
+</div>
+<p class="font-body-md text-black text-sm mb-6 leading-relaxed flex-grow">
+                            An end-to-end automation workflow that nurtures leads, scores engagement, and notifies sales teams instantly.
+                        </p>
+<div class="flex space-x-4 mb-6 pt-4 border-t border-black/10">
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Time Saved</span>
+<span class="font-body-md text-black">+89%</span>
+</div>
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Response</span>
+<span class="font-body-md text-black">1.8x Faster</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-sm text-[11px] text-black/60 uppercase tracking-wider">Operations</span>
+<a class="inline-flex items-center space-x-2 text-black font-label-sm text-[12px] uppercase tracking-wider group/link hover:text-black/70 transition-colors" href="#">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-[40px] overflow-hidden group hover:-translate-y-2 transition-transform duration-500 flex flex-col">
+<div class="relative h-64 overflow-hidden p-4">
+<div class="absolute top-6 left-6 z-10 inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md border border-black/10 rounded-full px-3 py-1">
+<span class="material-symbols-outlined text-[12px] text-black">language</span>
+<span class="font-label-sm text-[10px] text-black uppercase tracking-wider">Website</span>
+</div>
+<img alt="Luxury Hospitality Group Website" class="w-full h-full object-cover rounded-lg scale-100 group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" data-alt="A luxurious hospitality and resort website mockup displayed on a sleek laptop screen. The screen shows a stunning image of a modern architectural hotel lobby with warm, inviting lighting. The laptop is placed on a minimalist wooden desk with a blurred background of a high-end interior, conveying elegance, comfort, and premium travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8I0PpSSuLTlsOoM0Zm50x1KKm48EhH2E-Fz_3P8Aaag5q5QMTe0nhdQJdr2uB-zbhryp-NHJe7fvpTEAoBeClDFRmN5iAnrNbCkfmIx-VAiz6Cqge52373UXOSZiFd0KvOQ0OAHWKjrXd47oAG9N_bH3SYwg1VgPguXclyTVY30Y2Wyv7S2007TqK7S4t3PKcvHeaMG_1Kw2SavnJqVf07TWUHJ-hkrNrDXXJcL1l82PMwsT9GVw9Q4fPKJd1FDgkXyNDcTnGx5_5"/>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-white/50">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body-lg text-[22px] text-black font-medium tracking-tight">LUXURY HOSPITALITY</h3>
+</div>
+<p class="font-body-md text-black text-sm mb-6 leading-relaxed flex-grow">
+                            A highly visual, immersive booking experience designed to capture the essence of a boutique hotel group.
+                        </p>
+<div class="flex space-x-4 mb-6 pt-4 border-t border-black/10">
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Organic Traffic</span>
+<span class="font-body-md text-black">+162%</span>
+</div>
+<div>
+<span class="block font-label-sm text-[10px] text-black/60 mb-1 uppercase">Direct Bookings</span>
+<span class="font-body-md text-black">3.1x</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-label-sm text-[11px] text-black/60 uppercase tracking-wider">Hospitality</span>
+<a class="inline-flex items-center space-x-2 text-black font-label-sm text-[12px] uppercase tracking-wider group/link hover:text-black/70 transition-colors" href="#">
+<span>View Case Study</span>
+<span class="material-symbols-outlined text-[16px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Statement & CTA -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop text-center">
+<div class="max-w-2xl mx-auto flex flex-col items-center">
+<div class="w-12 h-px bg-black/20 mb-8"></div>
+<p class="font-body-lg text-[20px] text-black font-light leading-relaxed mb-12">
+                    Every project is designed to attract the right customers, automate operations, and scale with confidence.
+                </p>
+<div class="flex items-center space-x-4">
+<span class="text-sm text-black/70">See how we can help your business grow.</span>
+<button class="inline-flex items-center justify-center px-6 py-3 border border-black/20 bg-transparent text-black font-label-sm uppercase tracking-wider rounded hover:bg-black/5 transition-colors duration-300">
+<span>Book a Strategy Call</span>
+<span class="material-symbols-outlined text-[16px] ml-2">north_east</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+</body></html>
