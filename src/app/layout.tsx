@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { EB_Garamond, Geist } from "next/font/google"
 import "./globals.css"
 import { LenisProvider } from "@/components/lenis-provider"
@@ -18,6 +18,11 @@ const ebGaramond = EB_Garamond({
 export const metadata: Metadata = {
   title: "Cenit Digital",
   description: "Digital Systems That Drive Growth",
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
