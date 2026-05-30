@@ -42,7 +42,7 @@ export function ShowcaseSection() {
           src="/showcasesectionbg.png"
           alt=""
           fill
-          className="object-cover object-right"
+          className="object-cover object-center lg:object-right"
         />
       </div>
 

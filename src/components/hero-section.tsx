@@ -45,11 +45,10 @@ export function HeroSection() {
           src="/hero-bg.jpg"
           alt=""
           fill
-          className="object-cover object-center"
-          style={{ objectPosition: "65% 65%" }}
+          className="object-cover object-center md:[object-position:65%_65%]"
           priority
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(18, 19, 23, 0.8) 0%, rgba(18, 19, 23, 0) 50%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(18, 19, 23, 0.85) 0%, rgba(18, 19, 23, 0.6) 40%, rgba(18, 19, 23, 0) 70%)" }} />
       </motion.div>
 
       <main className="relative z-10 w-full min-h-screen md:h-screen px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col pt-[80px]">

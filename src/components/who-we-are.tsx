@@ -81,7 +81,7 @@ export function WhoWeAre() {
         </motion.div>
       </div>
 
-      <div className="w-full min-h-[400px] lg:h-auto lg:min-h-[800px] lg:absolute lg:top-0 lg:left-0 lg:w-full lg:z-0 relative overflow-hidden bg-surface py-12 lg:py-0">
+      <div className="w-full lg:min-h-[800px] lg:absolute lg:top-0 lg:left-0 lg:w-full lg:z-0 relative overflow-hidden bg-surface py-12 lg:py-0">
         <Image
           src="/whoweareback.png"
           alt=""
@@ -94,7 +94,7 @@ export function WhoWeAre() {
         }} />
 
         <motion.div
-          className="absolute inset-0 flex flex-col justify-center px-margin-mobile lg:pl-[42%] lg:pr-20 z-10 gap-10 lg:gap-24"
+          className="relative lg:absolute lg:inset-0 flex flex-col lg:justify-center px-margin-mobile lg:pl-[42%] lg:pr-20 z-10 gap-10 lg:gap-24"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
