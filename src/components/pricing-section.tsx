@@ -55,7 +55,8 @@ export function PricingSection() {
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-32">
         <motion.header
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16 md:mb-24"
         >
@@ -72,7 +73,8 @@ export function PricingSection() {
             <motion.article
               key={tier.name}
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 * index }}
               className={`flex flex-col h-full transition-all duration-500 p-6 md:p-10 relative rounded-[24px] md:rounded-[40px] backdrop-blur-xl ${
                 tier.highlighted
@@ -81,7 +83,7 @@ export function PricingSection() {
               }`}
             >
               {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-surface font-label-sm text-[12px] px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black font-label-sm text-[12px] px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap">
                   Most Popular
                 </div>
               )}
@@ -128,7 +130,7 @@ export function PricingSection() {
                 href="#contact"
                 className={`block w-full py-4 px-6 font-label-sm text-[12px] uppercase tracking-widest rounded-xl text-center transition-all duration-300 active:scale-[0.98] ${
                   tier.highlighted
-                    ? "bg-primary text-surface hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02]"
+                    ? "bg-primary text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02]"
                     : "border border-white/20 text-primary hover:bg-white/10 hover:border-white/30"
                 }`}
               >

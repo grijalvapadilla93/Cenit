@@ -62,7 +62,8 @@ export function ShowcaseSection() {
           <div className="md:col-span-6 flex flex-col items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6 backdrop-blur-md"
             >
@@ -71,7 +72,8 @@ export function ShowcaseSection() {
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
               className="font-display-lg editorial-headline text-primary mb-4 font-medium [text-shadow:_0_4px_30px_rgb(0_0_0_/_60%)]"
             >
@@ -80,7 +82,8 @@ export function ShowcaseSection() {
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
               className="font-body-lg text-[20px] text-on-surface max-w-xl leading-relaxed [text-shadow:_0_2px_20px_rgb(0_0_0_/_50%)]"
             >
@@ -159,7 +162,7 @@ export function ShowcaseSection() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <span className="text-sm text-on-surface-variant">See how we can help your business grow.</span>
-            <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-surface font-label-sm text-[12px] uppercase tracking-widest rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
+            <a href="#contact" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-black font-label-sm text-[12px] uppercase tracking-widest rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
               <span>Book a Strategy Call</span>
               <span className="material-symbols-outlined text-[16px] ml-2">north_east</span>
             </a>

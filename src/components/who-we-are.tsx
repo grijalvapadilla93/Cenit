@@ -11,6 +11,12 @@ const services = [
     title: "Websites",
     description: "Strategic, high-converting websites designed to turn visitors into customers.",
     callout: "Built to convert visitors into loyal customers.",
+    steps: [
+      { step: 1, title: "Discovery & Strategy", description: "We learn your business, audience, and goals to build a roadmap." },
+      { step: 2, title: "Design & Prototype", description: "We craft a high-conversion visual experience tailored to your brand." },
+      { step: 3, title: "Build & Develop", description: "We develop with clean, performant code that scales." },
+      { step: 4, title: "Launch & Optimize", description: "We deploy, test, and iterate to maximize results." },
+    ],
   },
   {
     id: "automation",
@@ -18,6 +24,12 @@ const services = [
     title: "Automation",
     description: "Streamline operations and eliminate repetitive tasks.",
     callout: "Save time, reduce costs, and operate more efficiently.",
+    steps: [
+      { step: 1, title: "Process Audit", description: "We map your workflows and identify bottlenecks." },
+      { step: 2, title: "System Design", description: "We design automated workflows tailored to your operations." },
+      { step: 3, title: "Integration", description: "We connect your tools into a seamless ecosystem." },
+      { step: 4, title: "Monitor & Refine", description: "We track performance and optimize continuously." },
+    ],
   },
   {
     id: "ai",
@@ -25,6 +37,12 @@ const services = [
     title: "AI Systems",
     description: "Capture, qualify, and engage leads automatically 24/7.",
     callout: "Never miss a lead again. AI that works while you sleep.",
+    steps: [
+      { step: 1, title: "Opportunity Analysis", description: "We identify where AI drives the most impact." },
+      { step: 2, title: "Model Selection", description: "We choose the right AI tools for your needs." },
+      { step: 3, title: "Implementation", description: "We deploy AI systems into your workflows." },
+      { step: 4, title: "Train & Scale", description: "We train your team and scale AI across operations." },
+    ],
   },
   {
     id: "seo",
@@ -32,6 +50,12 @@ const services = [
     title: "SEO & Growth",
     description: "Rank higher, get found, and drive consistent, qualified traffic.",
     callout: "More visibility. More traffic. More opportunities.",
+    steps: [
+      { step: 1, title: "Audit & Research", description: "We analyze your current position and opportunities." },
+      { step: 2, title: "Strategy Development", description: "We build a roadmap to dominate your market." },
+      { step: 3, title: "Execution", description: "We implement on-page, off-page, and technical SEO." },
+      { step: 4, title: "Measure & Adapt", description: "We track rankings, traffic, and refine the approach." },
+    ],
   },
 ]
 
@@ -100,37 +124,44 @@ export function WhoWeAre() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          key={activeId ?? "default"}
         >
-          {services.map((service, i) => (
-            <motion.div
-              key={service.id}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 * i + 0.3 } },
-              }}
-              className="flex items-start gap-4 lg:gap-8"
-              animate={{
-                opacity: activeId === null || activeId === service.id ? 1 : 0.3,
-                x: activeId === null || activeId === service.id ? 0 : -10,
-              }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
-            >
-              <div className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-primary flex-shrink-0 mt-1">
-                <span className="material-symbols-outlined">{service.icon}</span>
-              </div>
-              <motion.div
-                className="h-[1px] bg-white/30 mt-7 hidden lg:block"
-                animate={{
-                  width: activeId === null || activeId === service.id ? 48 : 0,
-                }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
-              />
-              <div>
-                <h4 className="font-label-sm text-label-sm tracking-widest uppercase text-white mb-2">{service.title}</h4>
-                <p className="font-body-md text-[15px] text-white/80 leading-snug max-w-xs">{service.callout}</p>
-              </div>
-            </motion.div>
-          ))}
+          {(() => {
+            const service = services.find((s) => s.id === activeId) ?? services[0]
+            return (
+              <>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="font-display-lg text-3xl md:text-4xl text-white font-medium mb-4"
+                >
+                  Our{" "}
+                  <span className="italic font-light text-white/80">{service.title}</span>{" "}
+                  Process
+                </motion.h3>
+                {service.steps.map((step, i) => (
+                  <motion.div
+                    key={step.step}
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 * i + 0.2 } },
+                    }}
+                    className="flex items-start gap-4 lg:gap-6"
+                  >
+                    <div className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-primary flex-shrink-0 mt-0.5 font-label-sm text-base">
+                      {step.step}
+                    </div>
+                    <div>
+                      <h4 className="font-label-sm text-sm md:text-base tracking-widest uppercase text-white mb-1.5">{step.title}</h4>
+                      <p className="font-body-md text-[15px] md:text-[17px] text-white/70 leading-relaxed max-w-sm">{step.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </>
+            )
+          })()}
         </motion.div>
       </div>
     </section>

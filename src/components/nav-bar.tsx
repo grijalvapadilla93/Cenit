@@ -78,7 +78,7 @@ export function NavBar() {
             <motion.a
               href="#contact"
               onClick={handleNavClick}
-              className="mt-4 inline-flex items-center gap-2 px-8 py-3 bg-primary text-surface font-label-sm text-[12px] uppercase tracking-widest rounded-full"
+              className="mt-4 inline-flex items-center gap-2 px-8 py-3 bg-primary text-black font-label-sm text-[12px] uppercase tracking-widest rounded-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
